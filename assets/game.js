@@ -32,19 +32,19 @@ function refresh(){
 }
 const hints={
  p1:['先确认袋上的K编号属于哪类旧业务，不要先猜为什么十几年没人取。','把2009旧站的刻盘登记格式和U-04编号放在一起看，再决定来源类型。','处理意见只需要与当前证据强度一致：来源虽能确认，但家属和用途还没有核完。'],
- p2:['这一项不是认颜色。先比较四次记录里哪些关系不受拍摄角度和曝光影响。','把“柜台相对固定开口的位置”和随柜台一起保留的物理标记分开看，再判断能否连续对应。','如果一种判断只靠反光、颜色或照片风格，它就不适合作为跨年份定位基准。'],
- p3:['先找图纸里不会随货架搬动而改变的东西，例如固定开口、窗和墙体。','把旧照中的视线方向和图纸的固定结构对上，再放可移动的柜台和长架。','如果仍然混乱，先确定侧门对应哪个固定开口；剩下两件再用窗线和过道宽度区分。'],
- p4:['论坛上传于2013，只能证明文件在2013出现，不能证明照片在2013拍。','把照片里的店内状态分别与促销单、柜台更换记录和租价变更记录对照。','三份来源应该把年份夹在同一小段时间里；不要用服装“看起来像哪年”这种主观判断。'],
+ p2:['先别看选项，先比较四次照片里哪些东西会因为换拍摄角度、换海报而消失，哪些不会。','需要一项来自固定建筑关系，另一项来自同一只抽屉本身留下的痕迹；两者应互相独立。','如果一个依据只靠人物、反光、颜色或上传时间，它不能证明四次记录对应的是同一组抽屉。'],
+ p3:['先把人物身份完全放到一边，只看正门、主通道和后墙固定开口。','参考A能直接看出柜台在进门左前方、长架沿通道延伸；参考B只补充柜台前沿方向。','侧门只能落在后墙固定开口；剩下两件再用主通道是否被截断来排除。'],
+ p4:['2013只是上传时间。先在原图里找蓝底服务牌、弧形木纹前台和2元/1元旧价签。','三个局部各自对应一份纸档；不要只看其中一份记录就下结论。','把服务牌、前台和价签各自的有效区间取交集，最后只会剩下一个年份。'],
  p5:['不要判断谁“说得像真的”，只记录每句话依赖的来源。','工作台只给发言编号。打开对应楼层，看它是本人在场、看过照片，还是听别人转述。','如果一条说法引用的是同一张照片，它不应被算成一次新的独立目击。'],
- p6:['这一步不要靠脸部相似。把四份来源当成四张独立小票据。','先确认2011年“许家小孩”是谁，再看蓝雨衣和相机电池是否都能落到同一个人身上。','如果某个姓名只能解释照片外貌，却解释不了会员补录、买电池和来店目的，就先排除。'],
+ p6:['这一步不要靠脸部相似。把四份来源当成彼此独立的记录。','把柜台称呼、家庭关系、旧雨衣和电池小票分别对应；完整姓名不会直接写在同一张纸上。','如果某个姓名只能解释其中一份资料，却不能同时解释称呼、家庭关系和来店目的，就先排除。'],
  p7:['文件名只是导出编号。先把“家里”“出门后”“桥头以后”三个空间阶段分开。','家中三张的内部先后在现有资料里无法精确确定；只需要让它们都出现在离家之前。','白鸽门口之后的几张可以靠公交站、桥和雨后街面形成连续路线。'],
- p8:['这里不是再把上面的公告抄一遍，而是判断哪条路线仍符合三份公开资料。','先排除穿过施工封闭段的走法，再看官方临时便道与照片顺序是否一致。','路线确定后，暴雨和照明故障只作为风险条件记录，不需要再补一个“神秘原因”。']
+ p8:['把照片顺序当成路标，但不要先假定道路名称；先确认离店后的几个空间节点。','施工公告只告诉你哪些路不能走、绕行口位于哪一侧；具体经过哪条便道还要和地图及照片节点相互吻合。','路线成立后，天气和照明只作为风险条件记录，不要把它们改写成新的路线节点。']
 };
 function isActuallyVisible(el){if(!el)return false;if(el.hidden)return false;let cur=el.parentElement;while(cur){if(cur.hidden)return false;cur=cur.parentElement}return true}
 function activePuzzle(){const h=(location.hash||'').replace('#','');if(hints[h])return h;const ids=(document.body.dataset.puzzles||document.body.dataset.puzzle||'').split(',').map(s=>s.trim()).filter(Boolean);for(const id of ids){if(state[id])continue;const section=document.querySelector(`[data-puzzle-section="${id}"]`);if(section&&!isActuallyVisible(section))continue;return id}return ''}
 function setupHints(){
  const puzzleSpec=document.body.dataset.puzzles||document.body.dataset.puzzle||'';if(!puzzleSpec.trim())return;
- const host=document.querySelector('.desk-menu,.album-nav,.route-nav')||document.querySelector('header')||document.body;
+ const host=document.querySelector('.menubar,.toolbar,.tools,.desk-menu,.album-nav,.route-nav')||document.querySelector('header')||document.body;
  const btn=document.createElement('button');btn.className='context-help';btn.type='button';btn.textContent='整理帮助';btn.setAttribute('aria-expanded','false');
  host.appendChild(btn);
  const panel=document.createElement('aside');panel.className='context-hint-panel';panel.hidden=true;panel.innerHTML='<div class="panel-head"><h3>整理备注</h3><button type="button" class="plain-button" data-close-hint>收起</button></div><div data-hint-content></div><p class="smallprint">只记录观察方向和操作方法，不代替资料判断。</p>';
@@ -54,9 +54,20 @@ function setupHints(){
 }
 function setupTop(){const b=document.createElement('button');b.className='to-top';b.type='button';b.textContent='↑';b.setAttribute('aria-label','回到顶部');document.body.appendChild(b);addEventListener('scroll',()=>b.style.display=scrollY>700?'block':'none');b.onclick=()=>scrollTo({top:0,behavior:'smooth'})}
 function setupImages(){document.querySelectorAll('img').forEach(img=>{if(!img.hasAttribute('loading'))img.loading='lazy';img.addEventListener('error',()=>{if(img.dataset.failed)return;img.dataset.failed='1';const p=document.createElement('p');p.className='feedback show bad';p.innerHTML='图片暂时没有加载出来。 <button type="button" class="plain-button">重试</button>';img.after(p);p.querySelector('button').onclick=()=>{img.dataset.failed='';p.remove();const s=img.src;img.src='';setTimeout(()=>img.src=s,30)}})})}
+
+function setupArchiveViewport(){
+ const w=Number(document.body.dataset.archiveWidth||0);if(!w)return;
+ const root=document.querySelector('[data-archive-root]')||document.body.firstElementChild;if(!root)return;
+ const frame=document.createElement('div');frame.className='archive-fit-frame';root.parentNode.insertBefore(frame,root);frame.appendChild(root);
+ const bar=document.createElement('div');bar.className='archive-viewbar';bar.innerHTML='<span>旧网页存档查看</span><div><button type="button" data-fit>适应屏幕</button><button type="button" data-original>原始大小</button></div>';frame.parentNode.insertBefore(bar,frame);
+ let mode='fit';
+ function apply(){const mobile=innerWidth<w+32;bar.hidden=!mobile;if(!mobile){root.style.transform='';root.style.transformOrigin='';root.style.width='';frame.style.height='';frame.style.width='';frame.style.overflow='';document.body.style.overflowX='';return}root.style.width=w+'px';if(mode==='fit'){const scale=Math.min(1,(innerWidth-8)/w);root.style.transform=`scale(${scale})`;root.style.transformOrigin='top left';frame.style.width='100%';frame.style.overflow='hidden';requestAnimationFrame(()=>frame.style.height=Math.ceil(root.scrollHeight*scale)+'px');document.body.style.overflowX='hidden'}else{root.style.transform='';root.style.transformOrigin='';frame.style.width=w+'px';frame.style.height='auto';frame.style.overflow='visible';document.body.style.overflowX='auto'}bar.querySelector('[data-fit]').classList.toggle('active',mode==='fit');bar.querySelector('[data-original]').classList.toggle('active',mode==='original')}
+ bar.querySelector('[data-fit]').onclick=()=>{mode='fit';apply()};bar.querySelector('[data-original]').onclick=()=>{mode='original';apply()};addEventListener('resize',apply);if('ResizeObserver'in window){const ro=new ResizeObserver(()=>{if(mode==='fit'&&innerWidth<w+32){const scale=Math.min(1,(innerWidth-8)/w);frame.style.height=Math.ceil(root.scrollHeight*scale)+'px'}});ro.observe(root)}document.fonts?.ready?.then(apply).catch(()=>{});apply();
+}
+
 function setupScroll(){requestAnimationFrame(()=>{const y=state.scroll[page];if(Number.isFinite(y)&&!location.hash)scrollTo(0,y)});addEventListener('pagehide',()=>{state.scroll[page]=Math.round(scrollY);save()})}
 function reset(){localStorage.removeItem(KEY);for(const k of LEGACY)localStorage.removeItem(k);location.href='index.html'}
 window.Game={get,save,complete,setDiscovery,setIntro,setDraft,getDraft,refresh,reset,toast,countPuzzle,introCount};
 addEventListener('storage',e=>{if(e.key===KEY){state=load();refresh();document.dispatchEvent(new CustomEvent('game-state-sync'))}});
-document.addEventListener('DOMContentLoaded',()=>{const main=document.querySelector('main');if(main){if(!main.id)main.id='main-content';const skip=document.createElement('a');skip.className='skip-link';skip.href='#'+main.id;skip.textContent='跳到主要内容';document.body.prepend(skip)}document.querySelectorAll('.feedback').forEach(el=>{if(!el.hasAttribute('role'))el.setAttribute('role','status');if(!el.hasAttribute('aria-live'))el.setAttribute('aria-live','polite')});setupHints();setupImages();setupScroll();refresh();if(location.hash){requestAnimationFrame(()=>{const target=document.getElementById(location.hash.slice(1));if(target&&isActuallyVisible(target))target.scrollIntoView({block:'start'})})}document.querySelectorAll('[data-discover]').forEach(a=>a.addEventListener('click',()=>setDiscovery(a.dataset.discover)));document.querySelectorAll('[data-intro]').forEach(b=>b.addEventListener('click',()=>{setIntro(b.dataset.intro);toast('已记入今日整理')}));const auto=document.body.dataset.discoverOnLoad;if(auto)setDiscovery(auto)})
+document.addEventListener('DOMContentLoaded',()=>{setupArchiveViewport();const main=document.querySelector('main');if(main){if(!main.id)main.id='main-content';const skip=document.createElement('a');skip.className='skip-link';skip.href='#'+main.id;skip.textContent='跳到主要内容';document.body.prepend(skip)}document.querySelectorAll('.feedback').forEach(el=>{if(!el.hasAttribute('role'))el.setAttribute('role','status');if(!el.hasAttribute('aria-live'))el.setAttribute('aria-live','polite')});setupHints();setupImages();setupScroll();refresh();if(location.hash){requestAnimationFrame(()=>{const target=document.getElementById(location.hash.slice(1));if(target&&isActuallyVisible(target))target.scrollIntoView({block:'start'})})}document.querySelectorAll('[data-discover]').forEach(a=>a.addEventListener('click',()=>setDiscovery(a.dataset.discover)));document.querySelectorAll('[data-intro]').forEach(b=>b.addEventListener('click',()=>{setIntro(b.dataset.intro);toast('已记入今日整理')}));const auto=document.body.dataset.discoverOnLoad;if(auto)setDiscovery(auto)})
 })();
