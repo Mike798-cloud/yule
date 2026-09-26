@@ -1,0 +1,48 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>闭店资料整理｜白鸽音像</title><link rel="stylesheet" href="assets/site.css"></head><body class="workbench" data-puzzles="p1,p5">
+<div class="desk">
+  <div class="desk-title"><span>白鸽音像 · 闭店资料整理</span><span>本机自动保存</span></div>
+  <div class="desk-menu"><a href="index.html">公开站</a><a href="workbench.html">资料库</a><a href="album.html">照片档案</a><a href="settings.html">设置</a></div>
+  <div class="desk-body">
+    <aside class="tree"><h3>资料库</h3><ul><li class="sel">待整理</li><li>未认领物　<span data-progress-unclaimed>1</span></li><li>纸质资料</li><li>照片与影像</li><li>店内业务单</li><li>顾客留言</li><li data-state="p5" hidden>已核引用关系</li><li data-state="endingSeen" hidden>已关闭记录</li></ul><p class="smallprint">这里只记闭店时实际需要的整理资料。未认领物、纸档、照片说明和业务单分别保存，不按“关卡”计数。</p></aside>
+    <main class="record-pane">
+      <section data-intro-incomplete>
+        <div class="record-toolbar"><h1>今日待录入</h1><span class="meta">先处理普通旧物，熟悉来源登记</span></div>
+        <div class="intro-ledger">
+          <div class="intro-row"><span class="meta">后墙卷筒</span><div><b>2007暑期放映海报</b><br><span class="meta">边角有水渍，背面无姓名；归入店内宣传物。</span></div><button class="plain-button" type="button" data-intro="poster" data-done-text="已登记">登记</button></div>
+          <div class="intro-row"><span class="meta">玻璃柜三格</span><div><b>注销会员卡一盒</b><br><span class="meta">全部剪角；保留一张作店史样本，其余按作废资料处理。</span></div><button class="plain-button" type="button" data-intro="cards" data-done-text="已留样">留样</button></div>
+          <div class="intro-row"><span class="meta">门口纸箱</span><div><b>无盒游戏光盘17张</b><br><span class="meta">划痕严重，编号不连续，不逐张建档。</span></div><button class="plain-button" type="button" data-intro="games" data-done-text="已记废品">登记</button></div>
+        </div>
+        <p class="meta">已处理 <b data-intro-count>0/3</b>。三项都登记完后，再继续清旧柜台第二层抽屉。</p>
+      </section>
+
+      <section data-intro-complete hidden data-puzzle-section="p1">
+        <div class="record-toolbar"><h1>未认领物 / U-04</h1><span class="meta">发现位置：旧柜台第二层抽屉</span></div>
+        <table class="grid-table"><thead><tr><th>编号</th><th>物件</th><th>发现位置</th><th>处理状态</th></tr></thead><tbody><tr><td>U-01</td><td>灰色围巾</td><td>2018冬季失物篮</td><td>已清理</td></tr><tr><td>U-02</td><td>学生证卡套（无卡）</td><td>旧打印机旁</td><td>无主信息</td></tr><tr><td>U-03</td><td>单只钥匙</td><td>收银台后磁吸板</td><td>来源不足</td></tr><tr class="active"><td>U-04</td><td>无封面刻录盘 + SD卡</td><td>旧柜台第二层抽屉</td><td><span data-not-state="p1">归属待核</span><span data-state="p1" hidden>暂不出售</span></td></tr></tbody></table>
+        <section class="record" id="record"><div class="record-photo"><img src="assets/img/evidence_u04_2026.jpg" alt="旧透明袋里保存着刻录盘、SD卡和写有许芹明天来取的纸条"><p class="figcap">图 U-04-1 · 2026闭店整理。透明袋、刻录盘、SD卡和纸条同袋保存。</p></div><div><dl class="field-table"><dt>袋面文字</dt><dd>许芹 / 明天来取</dd><dt>旧编号</dt><dd>K-0815-3</dd><dt>物件</dt><dd>无封面刻录盘一张，附SD卡</dd><dt>发现位置</dt><dd>旧柜台第二层抽屉</dd><dt>来源类型</dt><dd><select id="sourceType" aria-label="U-04来源类型"><option value="">请选择…</option><option value="rental">出租商品</option><option value="commission">顾客刻盘委托</option><option value="stock">店内备份</option><option value="unknown">来源不明散盘</option></select></dd><dt>处理意见</dt><dd><select id="dispose" aria-label="U-04处理意见"><option value="hold">暂不出售 / 暂缓处理</option><option value="sell">可出售</option><option value="trash">可清理</option></select></dd></dl><div class="work-action"><button class="plain-button" id="saveU04" type="button">保存记录</button><div id="p1fb" class="feedback" role="status"></div><p class="smallprint">先判断它属于哪类旧业务，再决定能不能进清仓。K-编号的写法可在2009站点镜像中核对。</p><p><a href="oldsite.html#burn" data-discover="oldsite" target="_blank" rel="noopener">打开2009站点镜像（新标签）</a></p></div></div></section>
+        <div class="completed-note" data-puzzle-done="p1" hidden>U-04 已记为“顾客刻盘委托 / 暂不出售”。袋面原字保留不改。旧柜台搬移记录里只写“袋面有姓名，勿入无主清理箱”。<br><a href="album.html#xuqin">照片档案里出现了同名人物：先看人物散页</a></div>
+      </section>
+
+      <section class="desk-section" data-all-state="p3,p4" data-not-state="p5" hidden id="citation-work" data-puzzle-section="p5">
+        <div class="record-toolbar"><h1>R-13 · 论坛引用关系</h1><span class="meta">来源：2013年“有人还记得白鸽音像吗？”讨论帖</span></div>
+        <p>把论坛里几条说法按来源层级记入整理表。这里只记录“这句话是怎么来的”，不判断发帖人是不是故意夸大。</p>
+        <table class="citation-table"><thead><tr><th>记录号</th><th>原帖位置</th><th>来源层级</th></tr></thead><tbody>
+          <tr><td>R13-01　山城的风</td><td><a href="forum.html#post-1" target="_blank" rel="noopener">查看原帖1楼</a></td><td><select data-cite="wind"><option value="">请选择</option><option value="witness">本人在场</option><option value="photo">看过照片</option><option value="retell">转述他人</option></select></td></tr>
+          <tr><td>R13-02　盐汽水</td><td><a href="forum.html#post-2" target="_blank" rel="noopener">查看原帖2楼</a></td><td><select data-cite="salt"><option value="">请选择</option><option value="witness">本人在场</option><option value="photo">看过照片</option><option value="retell">转述他人</option></select></td></tr>
+          <tr><td>R13-03　北桥修鞋</td><td><a href="forum.html#post-3" target="_blank" rel="noopener">查看原帖3楼</a></td><td><select data-cite="shoe"><option value="">请选择</option><option value="witness">本人在场</option><option value="photo">看过/核对照片</option><option value="retell">转述他人</option></select></td></tr>
+          <tr><td>R13-04　老黑VCD</td><td><a href="forum.html#post-4" target="_blank" rel="noopener">查看原帖4楼</a></td><td><select data-cite="vcd"><option value="">请选择</option><option value="witness">本人在场</option><option value="photo">看过照片</option><option value="retell">转述他人</option></select></td></tr>
+        </tbody></table>
+        <button class="plain-button" id="saveCitations" type="button">保存引用关系</button><div id="p5fb" class="feedback"></div>
+      </section>
+      <div class="completed-note" data-puzzle-done="p5" hidden>R-13 已保存：论坛里多数“她回来过”的说法都能追到同一张照片或二次转述；只有“许家后来有个孩子来过”来自明确的现场记忆。<br><a href="album.html#person-note">回照片档案补门边人物姓名</a></div>
+
+      <section class="desk-section"><h2 style="font:700 20px SimSun,serif">关联附件</h2><div class="attachment-strip"><figure><img src="assets/img/old_interior.jpg" alt="2009年前后的白鸽音像店内"><figcaption class="figcap">店内旧照：柜台与货架。</figcaption></figure><figure><img src="assets/img/interior_counter.jpg" alt="旧柜台近景"><figcaption class="figcap">柜台东侧：纸账和委托袋常放在一起。</figcaption></figure><figure><img src="assets/img/crt_corner.jpg" alt="旧电视与杂物角落"><figcaption class="figcap">店内杂物照，与U-04无直接归属关系。</figcaption></figure></div></section>
+    </main>
+  </div>
+</div>
+<script src="assets/game.js"></script><script>
+const source=document.getElementById('sourceType'),dispose=document.getElementById('dispose'),fb=document.getElementById('p1fb');
+const saved=Game.getDraft('u04',{});if(source&&saved.source)source.value=saved.source;if(dispose&&saved.dispose)dispose.value=saved.dispose;
+if(document.getElementById('saveU04'))document.getElementById('saveU04').onclick=()=>{const t=source.value,d=dispose.value,ok=t==='commission'&&d==='hold';fb.className='feedback show '+(ok?'good':'bad');if(ok){fb.textContent='K-编号的写法和旧站业务说明都能支持这条来源记录。';Game.setDraft('u04',{source:t,dispose:d});Game.complete('p1','U-04：顾客刻盘委托，暂不出售');Game.setDiscovery('xuqin')}else fb.textContent='当前来源或处理状态和旧业务资料对不上。先核对K-编号，再判断它是不是顾客刻盘委托。'};
+const citationSaved=Game.getDraft('citations',{});document.querySelectorAll('[data-cite]').forEach(s=>{if(citationSaved[s.dataset.cite])s.value=citationSaved[s.dataset.cite];s.addEventListener('change',()=>{const o={};document.querySelectorAll('[data-cite]').forEach(x=>o[x.dataset.cite]=x.value);Game.setDraft('citations',o)})});
+const cbtn=document.getElementById('saveCitations');if(cbtn)cbtn.onclick=()=>{const vals={};document.querySelectorAll('[data-cite]').forEach(x=>vals[x.dataset.cite]=x.value);const ok=vals.salt==='photo'&&vals.wind==='retell'&&vals.shoe==='photo'&&vals.vcd==='witness',f=document.getElementById('p5fb');f.className='feedback show '+(ok?'good':'bad');f.textContent=ok?'引用层级已保存。后面的“回来过”并不是几组独立目击。':'还有一条来源层级不对。注意区分本人在场、看过照片和听别人说。';Game.setDraft('citations',vals);if(ok)Game.complete('p5','论坛引用关系已整理')};
+</script></body></html>
