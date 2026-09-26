@@ -1,1 +1,5 @@
 body{background:#efeee9;color:#222;font:14px/1.8 Arial,"Microsoft YaHei",sans-serif}.wrap{min-height:100vh;display:grid;place-items:center;padding:30px}.inner{width:min(500px,100%)}.inner h1{font:500 26px FangSong,STFangsong,SimSun,serif;margin:0 0 28px}.log{border-top:1px solid #999;border-bottom:1px solid #999;padding:14px 0;margin:24px 0}.log p{margin:5px 0;font-family:Consolas,"Courier New",monospace}.inner a{color:#444}
+
+/* Intentional quiet ending, with typographic structure instead of empty-page feel. */
+body{background:#e5e1d8;color:#211f1b}.wrap{background:linear-gradient(90deg,#d4cec2 0 12px,transparent 12px);padding:42px}.inner{width:min(560px,100%);padding:34px 0;border-top:5px solid #5a2a27;border-bottom:1px solid #8b8378}.inner>p:first-child{margin:0 0 8px;color:#6b6258;letter-spacing:.18em}.inner h1{font-size:31px;color:#2a2622;margin-bottom:32px}.log{padding:16px 0;border-top:3px double #8c8377;border-bottom:3px double #8c8377}.log p{color:#403a34}.inner a{color:#5e302d;font-weight:600}
+@media(max-width:600px){.wrap{padding:24px}.inner{padding-top:26px}}

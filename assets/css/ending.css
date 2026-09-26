@@ -3,3 +3,6 @@ html.ending-done body{background:#0b0b0b;color:#ddd}.ending-done .app{display:no
 
 /* Keep the dim handheld closing photo at a believable display size instead of enlarging its grain. */
 .pickup{width:min(640px,100%);margin-left:auto;margin-right:auto}
+
+/* Final ending legibility pass. */
+html.ending-done body{background:#080a0b;color:#e4e7e8}.ending-done .after-screen{background:#080a0b;color:#e4e7e8}.logline{border-bottom-color:#43484a}.logline span{color:#a5adb0}.pickup figcaption{color:#adb4b7}.dialogue{color:#ecebea}.thanks-link a{color:#d4d9db}.pickup{border-top:1px solid #313638;padding-top:18px}
