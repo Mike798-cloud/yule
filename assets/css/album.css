@@ -25,3 +25,15 @@ body{background:#222;color:#ddd;font:13px/1.5 Arial,"Microsoft YaHei",sans-serif
 .date-photo{margin:12px 0 8px;max-width:760px}.date-photo img{width:100%;display:block}.date-photo figcaption{font-size:11px;color:#666;margin-top:5px}
 .photo-detail-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0 16px;max-width:760px}.photo-detail-strip figure{margin:0;background:#e8e8e4;border:1px solid #aaa;padding:5px}.photo-detail-strip figcaption{font-size:11px;color:#555;padding:4px 2px 1px}.photo-crop{height:125px;background-image:url('../img/interior_counter.jpg');background-repeat:no-repeat;background-size:280% auto;border:1px solid #999;background-color:#ddd}.crop-service{background-position:6% 4%}.crop-counter{background-size:190% auto;background-position:45% 93%}.crop-price{background-size:230% auto;background-position:47% 95%}
 @media(max-width:600px){.photo-detail-strip{grid-template-columns:1fr}.photo-crop{height:150px}.layout-references{grid-template-columns:1fr}}
+
+/* Cross-year drawer evidence: a single archival comparison sheet, not four UI cards. */
+.crossyear-sheet{margin:14px 0 18px;max-width:980px;background:#d8d7d2;border:1px solid #a5a49e;padding:7px}
+.crossyear-sheet img{display:block;width:100%;height:auto;background:#777}
+.crossyear-sheet figcaption{margin-top:6px;color:#666;font-size:12px;line-height:1.55}
+@media(max-width:600px){.crossyear-sheet{margin-left:0;margin-right:0;padding:4px}.crossyear-sheet figcaption{font-size:11px}}
+
+/* P2 is a record reconciliation, not a synthetic image-comparison board. */
+.p2-records{display:grid;grid-template-columns:minmax(250px,420px) 1fr;gap:18px;margin:14px 0}.p2-records figure{margin:0}.p2-records img{width:100%;height:auto;max-height:320px;object-fit:cover}.p2-records figcaption{font-size:11px;color:#666;margin-top:4px}.record-ledger{border-top:1px solid #aaa}.record-ledger p{margin:0;padding:10px 4px;border-bottom:1px solid #ccc}.archive-choice{border:1px solid #aaa;padding:10px 12px;margin:14px 0;background:#efefec}.archive-choice legend{font-weight:700}.archive-choice label{display:block;padding:6px 0}.archive-choice input{margin-right:7px}
+@media(max-width:680px){.p2-records{grid-template-columns:1fr}}
+
+.plan-help{margin-top:8px;color:#666}.plan-help summary{cursor:pointer;text-decoration:underline}.raw-source-index small,.identity-sources small{font-weight:400;color:#777;margin-left:6px}.related-update{line-height:1.7}
