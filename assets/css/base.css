@@ -8,3 +8,5 @@
 
 /* Global terminal readability floor; page-specific dark themes override this. */
 .meta,.smallprint{color:#595959}.figcap{color:#555}
+
+.archive-shell{letter-spacing:.01em}.archive-shell a{text-decoration:none}.archive-shell a:hover{text-decoration:underline}

@@ -8,3 +8,5 @@ body{background:#bebcb8;color:#201d1b}.gov{box-shadow:0 0 0 1px #999;background:
 @media(max-width:700px){.archive-readable .culture-feature{grid-template-columns:1fr;grid-template-rows:auto}.archive-readable .culture-feature figure{grid-row:auto}.archive-readable .culture-feature img{height:210px}.archive-readable .feature-list{grid-template-columns:1fr 1fr;padding:10px 13px}.archive-readable .feature-list h3{grid-column:1/-1}}
 .article a,.article-layout a,.registry a{color:#6f2024;text-decoration-color:#a56d6f}.article a:hover,.article-layout a:hover,.registry a:hover{color:#8b171c}.culture-feature figcaption{background:#0007;padding:2px 5px;color:#fff}
 .article-lead figcaption{font-size:11px;line-height:1.45}
+
+.archive-news-list{list-style:none;padding:0;margin:18px 0}.archive-news-list li{display:grid;grid-template-columns:70px 1fr;padding:9px 4px;border-bottom:1px dotted #b7a99d}.archive-news-list time{color:#8c3a30}.archive-news-list a{color:#7e2118}
