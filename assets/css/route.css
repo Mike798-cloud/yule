@@ -31,3 +31,6 @@ body.route-page,body{margin:0;background:#0b1013;color:var(--text);font:13px/1.5
 .local-index-note{max-width:820px;margin:20px 0 8px;padding:10px 13px;background:#1b272c;border-left:3px solid #708b96;color:#c7d1d4}.local-index-note b{color:#edf2f3}.local-index-note p{margin:4px 0 0;color:#aebcc1;font-size:12px}.road-page .local-index-note{background:#d9e0de;color:#2d3b40;border-left-color:#677c84}.viewer-related span{padding:5px 8px;background:#172227;border:1px solid #314249}.drive-strip{white-space:nowrap;overflow:auto}
 /* Non-actionable entries in the mounted-drive toolbar stay visible without pretending to be links. */
 .tools .tool-disabled{display:inline-block;padding:7px 11px;color:#708087;border-right:1px solid #26363d;background:#11191d;cursor:default}.tools .tool-disabled:before{content:'· ';color:#4f636b}.project-note .note-tail{margin-top:8px;padding-top:7px;border-top:1px dotted #4a5d64;color:#c7d1d4;font-style:italic}
+/* Recovered JPEG coherence: the eight U-04 images pass through one mild 2009 compact-camera display profile. */
+.sd-overview img,.contact-sheet .frame img,.page-viewer>img{filter:saturate(.78) contrast(.94) brightness(.98) sepia(.025)}
+
