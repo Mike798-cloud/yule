@@ -43,6 +43,7 @@ const hints={
 function isActuallyVisible(el){if(!el)return false;if(el.hidden)return false;let cur=el.parentElement;while(cur){if(cur.hidden)return false;cur=cur.parentElement}return true}
 function activePuzzle(){const h=(location.hash||'').replace('#','');if(hints[h])return h;const ids=(document.body.dataset.puzzles||document.body.dataset.puzzle||'').split(',').map(s=>s.trim()).filter(Boolean);for(const id of ids){if(state[id])continue;const section=document.querySelector(`[data-puzzle-section="${id}"]`);if(section&&!isActuallyVisible(section))continue;return id}return ''}
 function setupHints(){
+ if(document.body.dataset.help!=='true')return;
  const puzzleSpec=document.body.dataset.puzzles||document.body.dataset.puzzle||'';if(!puzzleSpec.trim())return;
  const host=document.querySelector('.menubar,.toolbar,.tools,.desk-menu,.album-nav,.route-nav')||document.querySelector('header')||document.body;
  const btn=document.createElement('button');btn.className='context-help';btn.type='button';btn.textContent='?';btn.setAttribute('aria-label','使用说明');btn.setAttribute('aria-expanded','false');
@@ -66,7 +67,8 @@ function setupArchiveViewport(){
 }
 
 function setupWindowLinks(){
- document.querySelectorAll('[data-system-window]').forEach(a=>{a.target='_blank';a.rel='opener'});
+ const systemTarget=a=>{const href=a.getAttribute('href')||'';let path='';try{path=new URL(href,location.href).pathname.toLowerCase()}catch(_){path=href.toLowerCase()}const file=(path.split('/').pop()||'').split('#')[0];if(path.includes('/album/')||path.startsWith('album/')||file==='album.html')return'baige_album';if(path.includes('/oldsite/')||path.startsWith('oldsite/')||file==='oldsite.html')return'baige_oldsite';if(file==='forum.html'||file==='thread-baige.html')return'baige_forum';if(file.startsWith('culture'))return'baige_culture';if(path.includes('/route/')||path.startsWith('route/')||file==='route.html')return'baige_route';if(file==='workbench.html'||file==='paper-records.html'||file==='settings.html')return'baige_records';if(file==='hexi-evening-20090817.html')return'baige_news';if(file==='guestbook.html'||file==='guestbook-older.html')return'baige_guestbook';if(file==='ending.html'||file==='thanks.html')return'baige_case';return'baige_reference'};
+ document.querySelectorAll('[data-system-window]').forEach(a=>{a.target=systemTarget(a);a.rel='opener'});
  document.querySelectorAll('[data-return-home]').forEach(a=>a.addEventListener('click',e=>{try{if(window.opener&&!window.opener.closed){e.preventDefault();window.opener.focus();window.close();setTimeout(()=>{if(!window.closed)location.href=ROOT_PREFIX+'index.html'},120)}}catch(_){}}));
 }
 function setupScroll(){requestAnimationFrame(()=>{const y=state.scroll[page];if(Number.isFinite(y)&&!location.hash)scrollTo(0,y)});addEventListener('pagehide',()=>{state.scroll[page]=Math.round(scrollY);save()})}
