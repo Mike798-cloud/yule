@@ -33,9 +33,9 @@ a{text-underline-offset:2px}
 .modal{width:min(470px,calc(100% - 30px));background:#fff;border:1px solid #666;padding:22px}
 .modal-actions{display:flex;gap:8px;justify-content:flex-end}
 
-.archive-shell{max-width:1100px;margin:0 auto;padding:5px 10px;background:#202225;color:#dfe2e3;border-bottom:1px solid #555;font:12px/1.45 Arial,"Microsoft YaHei",sans-serif;letter-spacing:.01em}
-.archive-shell a{float:right;color:#f0f1f1;text-decoration:none}
-.archive-shell a:hover{text-decoration:underline}
+.archive-shell{max-width:1100px;margin:0 auto;padding:2px 10px;background:#f1eee8;color:#655f58;border-bottom:1px solid #d7d1c7;font:12px/1.45 Arial,"Microsoft YaHei",sans-serif;letter-spacing:.02em}
+.archive-shell a{float:right;color:#66554f;text-decoration:none}
+.archive-shell a:hover{text-decoration:underline;color:#3f312d}
 .archive-viewbar{position:sticky;top:0;z-index:9999;min-height:38px;display:flex;align-items:center;justify-content:space-between;padding:5px 8px;background:#222;color:#eee;font:12px Arial,"Microsoft YaHei",sans-serif;border-bottom:1px solid #555}
 .archive-viewbar[hidden]{display:none}
 .archive-viewbar button{border:1px solid #777;background:#3a3a3a;color:#eee;padding:4px 8px;margin-left:5px}
@@ -45,6 +45,6 @@ a{text-underline-offset:2px}
 .to-top{position:fixed;right:16px;bottom:16px;z-index:450;display:none;width:36px;height:36px;border:1px solid #666;background:#232323;color:#fff;cursor:pointer}
 
 @media(max-width:700px){
-  .archive-shell{font-size:11px}
+  .archive-shell{font-size:12px}
   .archive-shell a{float:none;margin-left:10px}
 }
